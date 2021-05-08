@@ -18,10 +18,10 @@ def print_wins_and_losses(max_number):
         losses = 0
 
     print(f'Wins: {wins}')
-    print(f'Wins: {(wins / num_loops) * 100:.2f}%')  # format decimal
+    print(f'Wins: {(wins / num_loops) * 100:.2f}%')
     print('-----------')
     print(f'Losses: {losses}')
-    print(f'Losses: {(losses / num_loops) * 100:.2f}%')  # format decimal
+    print(f'Losses: {(losses / num_loops) * 100:.2f}%')
 
     # clear games list to run with new card limit
     games.clear()
@@ -35,11 +35,11 @@ if __name__ == '__main__':
         num_loops = 10
 
     try:
-        max_number = int(input('When player stops? Press Enter for 17: '))
+        max_number = int(input('Maximum card value to Stand? Press Enter for 17: '))
     except ValueError:
         max_number = 17
 
-    answer = input('Want to raise card limit with each loop? [y/n] ').lower().strip()
+    answer = input('Want to raise card Stand with each loop? [y/n] ').lower().strip()
 
     print('\n\n')
 

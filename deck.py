@@ -18,7 +18,7 @@ class Deck:
         # create empty list in which we add player's hand
         cards = []
         for i in range(iteration):
-            # pick a random card from cards of deck
+            # pick a random card from deck
             card = random.choice(self.cards)
             # remove said card from deck
             self.cards.remove(card)
