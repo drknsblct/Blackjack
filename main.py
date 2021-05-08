@@ -1,6 +1,7 @@
 from collections import Counter
 from blackjack import Blackjack, games
 
+
 def print_wins_and_losses(max_number):
     for _ in range(num_loops):
         Blackjack().play(max_number)
@@ -40,10 +41,12 @@ if __name__ == '__main__':
 
     answer = input('Want to raise card limit with each loop? [y/n] ').lower().strip()
 
+    print('\n\n')
+
     if answer == 'y':
         while max_number <= 21:
             print(f'Max number is currently: {max_number}')
-            raise_card_limit(max_number)
+            print_wins_and_losses(max_number)
             max_number += 1
     else:
-      raise_card_limit(max_number)
+        print_wins_and_losses(max_number)
