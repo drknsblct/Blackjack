@@ -30,7 +30,7 @@ class Blackjack:
             return 1
 
         while self.player.score <= num:
-            # if score is below num then we add
+            # if player's score is below num then we add
             bust = 0
 
             if self.player.score <= num:

@@ -10,8 +10,6 @@ def print_wins_and_losses(max_number):
     wins = counts.get('Wins')
     losses = counts.get('Losses')
 
-    print(Counter(games))
-
     if wins is None:
         wins = 0
     elif losses is None:
@@ -23,7 +21,7 @@ def print_wins_and_losses(max_number):
     print(f'Losses: {losses}')
     print(f'Losses: {(losses / num_loops) * 100:.2f}%')
 
-    # clear games list to run with new card limit
+    # clear games list to run again with new card stand
     games.clear()
     print('\n\n')
 
@@ -45,7 +43,7 @@ if __name__ == '__main__':
 
     if answer == 'y':
         while max_number <= 21:
-            print(f'Max number is currently: {max_number}')
+            print(f'Max Stand is currently: {max_number}')
             print_wins_and_losses(max_number)
             max_number += 1
     else:
