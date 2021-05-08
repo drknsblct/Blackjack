@@ -1,6 +1,34 @@
 from collections import Counter
-
 from blackjack import Blackjack, games
+
+counts = Counter(games)
+wins = counts.get('Wins')
+losses = counts.get('Losses')
+
+
+def raise_card_limit(max_number):
+    global wins, losses
+
+    for i in range(num_loops):
+        Blackjack().play(max_number)
+
+
+    # print(Counter(games))
+
+    if wins is None:
+        wins = 0
+    elif losses is None:
+        losses = 0
+
+    print(f'Wins: {wins}')
+    print(f'Wins: {(wins / num_loops) * 100:.2f}%')  # format decimal
+    print('-----------')
+    print(f'Losses: {losses}')
+    print(f'Losses: {(losses / num_loops) * 100:.2f}%')  # format decimal
+
+    games.clear()
+    print('\n\n')
+
 
 if __name__ == '__main__':
     try:
@@ -13,13 +41,16 @@ if __name__ == '__main__':
     except ValueError:
         max_number = 17
 
-    for i in range(num_loops):
-        Blackjack().play(max_number)
-    counts = Counter(games)
-    print(Counter(games))
+    answer = input('Want to raise card limit with each loop? [y/n] ').lower().strip()
 
-    print(f'Wins: {counts.get("Wins")}')
-    print(f'Wins: {(counts.get("Wins") / num_loops) * 100:.2f}%')  # format decimal
-    print('-----------')
-    print(f'Losses: {counts.get("Losses")}')
-    print(f'Losses: {(counts.get("Losses") / num_loops) * 100:.2f}%')  # format decimal
+    if answer == 'y':
+        while max_number <= 21:
+            print(f'Max number is currently: {max_number}')
+            raise_card_limit(max_number)
+            max_number += 1
+    else:
+        print(f'Wins: {wins}')
+        print(f'Wins: {(wins / num_loops) * 100:.2f}%')  # format decimal
+        print('-----------')
+        print(f'Losses: {losses}')
+        print(f'Losses: {(losses / num_loops) * 100:.2f}%')  # format decimal
