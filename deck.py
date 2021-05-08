@@ -25,6 +25,3 @@ class Deck:
             # add said card to hand
             cards.append(card)
         return cards
-
-    # def count(self):
-    #     return len(self.cards)
