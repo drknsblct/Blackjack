@@ -16,11 +16,8 @@ def print_wins_and_losses(max_number):
     elif losses is None:
         losses = 0
 
-    print(f'Wins: {wins}')
-    print(f'Wins: {(wins / num_loops) * 100:.2f}%')
-    print('-----------')
-    print(f'Losses: {losses}')
-    print(f'Losses: {(losses / num_loops) * 100:.2f}%')
+    print(f'Wins: {wins} | Losses: {losses}')
+    print(f'Wins: {wins / num_loops * 100:.2f}% | Losses: {losses / num_loops * 100:.2f}%')
 
     # clear games list to run again with new card stand
     games.clear()
@@ -40,7 +37,6 @@ if __name__ == '__main__':
         max_number = 17
 
     answer = input('Want to raise card Stand with each loop? [y/n] ').lower().strip()
-
     print('\n\n')
 
     if answer == 'y':
