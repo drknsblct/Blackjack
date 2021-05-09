@@ -1,5 +1,6 @@
 from collections import Counter
 from blackjack import Blackjack, games
+from logo import logo
 
 
 def print_wins_and_losses(max_number):
@@ -27,6 +28,7 @@ def print_wins_and_losses(max_number):
 
 
 if __name__ == '__main__':
+    print(logo)
     try:
         num_loops = int(input('How many times you want to play? Press Enter for 10: '))
     except ValueError:
