@@ -45,7 +45,7 @@ class Blackjack:
             games.append('Losses')
             return 1
 
-        while self.dealer.check_score() < 17:
+        while self.dealer.check_score() <= 17:
             # dealer must have at least 17 card value according to the rules
             if self.dealer.hit() == 1:
                 # if dealer's cards have value > 21 then we win
