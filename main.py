@@ -52,7 +52,7 @@ if __name__ == '__main__':
             break
     print('\n\n')
 
-    if answer == 'y':
+    if re.search(r'^y(es)?$', answer):
         while max_number <= 21:
             print(f'Max Stand is currently: {max_number}')
             print_wins_and_losses(max_number)
