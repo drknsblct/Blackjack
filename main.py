@@ -1,6 +1,7 @@
 from collections import Counter
 from blackjack import Blackjack, games
 from logo import logo
+import re
 
 
 def print_wins_and_losses(max_number):
@@ -32,6 +33,7 @@ if __name__ == '__main__':
             if num_loops > 0:
                 break
     except ValueError:
+        print('Entering default value (10) for times to play\n')
         num_loops = 10
 
     try:
@@ -40,11 +42,13 @@ if __name__ == '__main__':
             if max_number > 0:
                 break
     except ValueError:
+        print('Entering default value (17) for maximum Stand\n')
         max_number = 17
 
     while True:
-        answer = input('Want to raise card Stand with each loop? [y/n] ').lower().strip()
-        if answer.isalpha():
+        answer = input('Want to raise card Stand with each loop? [(y)es/n(o)] ').lower().strip()
+        # regular expression to catch y/yes or n/no only
+        if re.search(r'^(y(es)?|n(o)?)$', answer):
             break
     print('\n\n')
 
