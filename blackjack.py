@@ -31,15 +31,15 @@ class Blackjack:
             losses += 1
             return
 
-        while self.player.score <= num:
+        while self.player.score < num:
             # if player's score is below num then we add
             bust = 0
 
-            if self.player.score <= num:
+            if self.player.score < num:
                 bust = self.player.hit()
 
+            # if player score > 21
             if bust == 1:
-                # if player has cards with values > 21
                 losses += 1
                 return
 
@@ -48,7 +48,7 @@ class Blackjack:
             losses += 1
             return
 
-        while self.dealer.check_score() <= 17:
+        while self.dealer.check_score() < 17:
             # dealer must have at least 17 card value according to the rules
             if self.dealer.hit() == 1:
                 # if dealer's cards have value > 21 then we win

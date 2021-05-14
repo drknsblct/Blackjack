@@ -28,7 +28,7 @@ if __name__ == '__main__':
     try:
         while True:
             max_number = int(input('Maximum card value to Stand? Press Enter for 17: '))
-            if max_number > 0:
+            if 0 < max_number <= 21:
                 break
     except ValueError:
         print('Entering default value (17) for maximum Stand\n')
@@ -46,5 +46,8 @@ if __name__ == '__main__':
             print(f'Max Stand is currently: {max_number}')
             print_wins_and_losses(max_number)
             max_number += 1
+            # set to 0 for next iteration
+            blackjack.wins = 0
+            blackjack.losses = 0
     else:
         print_wins_and_losses(max_number)
