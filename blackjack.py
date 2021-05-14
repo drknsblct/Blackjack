@@ -16,9 +16,6 @@ class Blackjack:
         # create dealer
         self.dealer = Player(True, self.deck)
 
-    # wins = 0
-    # losses = 0
-
     def play(self, num):
         global wins, losses
         player_status = self.player.deal()
@@ -27,10 +24,11 @@ class Blackjack:
         if player_status == 1:
             # if player draws 21 first try
             wins += 1
+            return
 
-            if dealer_status == 1:
-                # if dealer draws 21 first try
-                losses += 1
+        if dealer_status == 1:
+            # if dealer draws 21 first try
+            losses += 1
             return
 
         while self.player.score <= num:
@@ -39,6 +37,7 @@ class Blackjack:
 
             if self.player.score <= num:
                 bust = self.player.hit()
+
             if bust == 1:
                 # if player has cards with values > 21
                 losses += 1
