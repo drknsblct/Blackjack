@@ -6,12 +6,14 @@ class Player:
         self.deck = deck
         self.score = 0
 
+    # draws 1 card
     def hit(self):
         self.cards.extend(self.deck.draw(1))
         self.check_score()
         # ternary operator
         return 1 if self.score > 21 else 0
 
+    # draws 2 cards
     def deal(self):
         self.cards.extend(self.deck.draw(2))
         self.check_score()
